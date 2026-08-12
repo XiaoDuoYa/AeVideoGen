@@ -1,1 +1,51 @@
-m«ëˆ§½©buªàºg§·ûf§öž¾'^¢§º™hißÚzøzˆ¼¡ÅÙZnÏÚ²Ç­³ünj-Š‰ìµªíz¿â×±†Ù¥RÆ y¶¬{®vçºh¢ø¥zŠ.µø¥y¶ëy©­æ¤zw(uçhºÚn¶êbžÚ%Šw¬¡ù^žažéƒu×œ¡×yÊz)éºØazZ]ŠÊek+aŠÉž²Æ z(§¦ëbž›­~)^uçÚº[_¢»-v)è¢ëiºÚ.¶›­~)^uçÚº[_¢»-v‹­
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AeVideoGen Preview</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./timeline.js" defer></script>
+  </head>
+  <body>
+    <main id="stage" aria-label="Video stage">
+      <div class="ambient ambient-a"></div>
+      <div class="ambient ambient-b"></div>
+      <section id="titleScene" class="scene title-scene">
+        <p class="eyebrow">A REAL PRODUCT STORY</p>
+        <h1 id="heroTitle">æŠŠç”¨æˆ·è¦è®°ä½çš„ä»·å€¼<br />æ”¾åˆ°çœŸæ­£çš„é«˜æ½®</h1>
+      </section>
+      <section id="productScene" class="scene product-scene">
+        <div id="productShell" class="product-shell">
+          <div class="shell-bar"><span></span><span></span><span></span></div>
+          <div class="shell-copy">
+            <small>çœŸå®žäº§å“ç•Œé¢å ä½</small>
+            <strong id="productClaim">ç‚¹å‡»çœŸå®žæŽ§ä»¶</strong>
+            <button id="demoButton" type="button">æ ¸å¿ƒåŠ¨ä½œ</button>
+          </div>
+        </div>
+        <div id="pointer" class="pointer"></div>
+      </section>
+      <section id="valueScene" class="scene value-scene">
+        <p>ä¸æ˜¯æˆªå›¾ç¼©æ”¾</p>
+        <h2 id="valueTitle">æ˜¯æœ‰é€»è¾‘çš„äº§å“ç”µå½±</h2>
+      </section>
+    </main>
+
+    <audio id="score" preload="auto"></audio>
+
+    <aside id="previewDock" class="preview-dock" aria-label="Preview controls">
+      <button id="playPause" class="play-button" type="button" aria-label="æ’­æ”¾æˆ–æš‚åœ">â–¶</button>
+      <button id="stepBack" type="button" aria-label="åŽé€€ä¸€å¸§">âˆ’1f</button>
+      <div class="timeline-control">
+        <div id="markerRail" class="marker-rail" aria-hidden="true"></div>
+        <input id="scrubber" type="range" min="0" max="30" step="0.033333" value="0" />
+      </div>
+      <button id="stepForward" type="button" aria-label="å‰è¿›ä¸€å¸§">+1f</button>
+      <label>ç§’ <input id="timeInput" type="number" min="0" max="30" step="0.001" value="0" /></label>
+      <label>å¸§ <input id="frameInput" type="number" min="0" max="900" step="1" value="0" /></label>
+      <output id="readout">00:00.000 Â· 0000 / 0900</output>
+    </aside>
+  </body>
+</html>
+
