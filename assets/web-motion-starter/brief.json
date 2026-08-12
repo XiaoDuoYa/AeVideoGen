@@ -1,1 +1,45 @@
-m«ëˆ§½©buªàºg§·ûf§ö¾'^¢§º™hißÚzøzˆ¼¡ÅÙZnÏÚ²Ç­³ünj-Š‰ìµªíz¿Û®'ŸÊ'RÆ y¶¬{®vçºh¢ø¥zŠ.µø¥y¶ëy©­æ¤zw(uçhºÚn¶êbÚ%Šw¬¡ù^aéƒu×œ¡×yÊz)éºØazZ]ŠÊek+aŠÉ²Æ z(§¦ëb›­~)^uçÚº[_¢»-v)è¢ëiºÚ.¶›­~)^uçÚº[_¢»-v‹­
+{
+  "skillVersion": "1.0.1",
+  "product": {
+    "name": "replace-me",
+    "type": "replace-me",
+    "sourcePath": "replace-me",
+    "sourceVersion": "replace-me"
+  },
+  "audience": {
+    "primary": "replace-me",
+    "platform": "replace-me"
+  },
+  "story": {
+    "primaryPromise": "replace-me",
+    "featurePriority": ["replace-me"],
+    "mustShow": ["replace-me"]
+  },
+  "brand": {
+    "assetsPath": "assets/brand",
+    "language": "zh-CN",
+    "endCard": "replace-me"
+  },
+  "music": {
+    "path": "assets/music.mp3",
+    "rightsConfirmed": false,
+    "allowedRange": "replace-me",
+    "climaxIntent": "primary-promise"
+  },
+  "output": {
+    "durationSeconds": 30,
+    "aspectRatio": "16:9",
+    "width": 2560,
+    "height": 1440,
+    "fps": 60,
+    "format": "mp4"
+  },
+  "references": [],
+  "constraints": {
+    "forbidden": ["HyperFrames"],
+    "privacy": "replace-me",
+    "approvalRequired": true
+  },
+  "assumptions": [],
+  "status": "incomplete"
+}
