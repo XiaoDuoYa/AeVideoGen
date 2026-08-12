@@ -1,1 +1,4 @@
-m�눧��bu��g���f����'^����hi��z��z������Zn�ځ����)zv�ɩ�RƠy��{�v�h����z�.���y��y���zw(u�h��n��b��%�w���^�a��uל�םy�z)��azZ]��ek+a�ɞ�Ơz(���b���~)^u�ں[_��-v)��i��.���~)^u�ں[_��-v��
+interface:
+  display_name: "AeVideoGen By HxdLabs_ v1.0.1"
+  short_description: "强引导式商业级 AE 风格真实产品网页宣传片工作流"
+  default_prompt: "使用 $ae-video-gen-by-hxdlabs 先检查我缺少的产品、源码、卖点、音乐、参考视频与输出要求，每个缺项给出推荐方案和备选，再生成可直接调用 Goal 的任务文本并制作可商用宣传片。"
