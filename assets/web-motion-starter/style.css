@@ -1,1 +1,107 @@
-m´ÎàßΩ©bu™‡∫gß∑˚fßˆûæ'^¢ß∫ôhiﬂ⁄z¯ùzàùº°≈ŸZnœ⁄≤«≠≥¸nj-äâÏµ™ÌzøÏ∑)^rÀ±®m´ÎÄ›ÖπÓö(ß~)^¢ã≠~)^m∫ﬁjFÎy©ù y⁄.∂õ≠∫òß∂âbùÎ(~WßÇÿg∫`›uÁ(uÁ^rá^äzn∂^ñób≤ôZ ÿb≤g¨±®ä)È∫ÿß¶Î_äWùyˆÆñ◊ËÆÀ]äz(∫⁄n∂ã≠¶Î_äWùyˆÆñ◊ËÆÀ]¢Î
+:root {
+  color-scheme: dark;
+  font-family: Inter, "SF Pro Display", "PingFang SC", system-ui, sans-serif;
+  background: #050706;
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { display: grid; place-items: center; background: #050706; }
+
+#stage {
+  position: relative;
+  width: min(100vw, calc(100vh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(104, 255, 189, 0.12), transparent 35%),
+    linear-gradient(145deg, #0e1511, #040605 70%);
+}
+
+.scene { position: absolute; inset: 0; display: grid; place-items: center; will-change: transform, opacity, filter; }
+.ambient { position: absolute; width: 45%; aspect-ratio: 1; border-radius: 50%; filter: blur(80px); opacity: 0.16; }
+.ambient-a { left: -10%; top: 8%; background: #47f5ad; }
+.ambient-b { right: -8%; bottom: -18%; background: #6a7cff; }
+
+.title-scene { text-align: left; padding: 11%; justify-items: start; align-content: center; }
+.eyebrow { color: #77e7b4; font-size: clamp(11px, 1.3vw, 24px); font-weight: 800; letter-spacing: 0.22em; }
+h1 { margin: 0; max-width: 12em; font-size: clamp(42px, 6vw, 112px); line-height: 0.98; letter-spacing: -0.055em; }
+
+.product-scene { opacity: 0; }
+.product-shell {
+  width: 29.7%;
+  aspect-ratio: 380 / 900;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 28px;
+  overflow: hidden;
+  color: #11221a;
+  background: #f6f8f5;
+  box-shadow: 0 40px 120px rgba(0,0,0,.5);
+  transform-origin: center;
+}
+.shell-bar { height: 8%; display: flex; gap: 8px; padding: 18px; background: #e9eee9; }
+.shell-bar span { width: 10px; height: 10px; border-radius: 50%; background: #a6b5aa; }
+.shell-copy { height: 92%; padding: 12% 8%; display: grid; align-content: center; gap: 20px; }
+.shell-copy small { color: #698074; font-size: clamp(10px, 1.1vw, 20px); }
+.shell-copy strong { font-size: clamp(24px, 3vw, 58px); line-height: 1.02; }
+.shell-copy button { border: 0; border-radius: 999px; padding: 16px 22px; color: white; background: #10251a; font: inherit; font-weight: 800; }
+
+.pointer {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(255,255,255,.12);
+  opacity: 0;
+}
+
+.value-scene { opacity: 0; text-align: center; }
+.value-scene p { margin: 0 0 10px; color: #70e4ad; font-weight: 800; letter-spacing: .08em; }
+.value-scene h2 { margin: 0; max-width: 92%; font-size: clamp(48px, 7vw, 130px); line-height: .95; letter-spacing: -.06em; white-space: nowrap; }
+
+.preview-dock {
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: min(1120px, calc(100vw - 28px));
+  display: grid;
+  grid-template-columns: auto auto minmax(220px, 1fr) auto auto auto minmax(185px, auto);
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  background: rgba(12, 15, 14, .82);
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  backdrop-filter: blur(22px) saturate(1.25);
+  font-size: 12px;
+}
+.preview-dock button,
+.preview-dock input[type="number"] {
+  min-height: 32px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  color: #eef8f2;
+  background: rgba(255,255,255,.07);
+}
+.preview-dock button { padding: 0 12px; cursor: pointer; }
+.preview-dock .play-button { color: #06120b; background: #70e4ad; border-color: transparent; font-weight: 900; }
+.preview-dock label { display: flex; align-items: center; gap: 5px; color: #9fafA6; white-space: nowrap; }
+.preview-dock input[type="number"] { width: 76px; padding: 0 8px; }
+.timeline-control { position: relative; min-width: 0; }
+.timeline-control input[type="range"] { width: 100%; accent-color: #70e4ad; }
+.marker-rail { position: absolute; inset: 0 8px; pointer-events: none; }
+.marker { position: absolute; top: 1px; width: 2px; height: 8px; border-radius: 2px; background: #f4d35e; }
+.preview-dock output { color: #c9d6ce; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+body.capture #stage { width: 100vw; height: 100vh; aspect-ratio: auto; }
+body.capture .preview-dock { display: none; }
+
+@media (max-width: 820px) {
+  .preview-dock { grid-template-columns: auto auto 1fr auto; }
+  .preview-dock label, .preview-dock output { display: none; }
+}
