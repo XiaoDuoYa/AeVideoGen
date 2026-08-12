@@ -1,1 +1,145 @@
-m«ëˆ§½©buªàºg§·ûf§ö¾'^¢§º™hißÚzøzˆ¼¡ÅÙZnÏÚ²Ç­³ünj-Š‰ìµªíz¿é®‡nrØ¨;(KæÚ±î¸Ø[é¢Šwâ•ê(º×â•æÛ­æ¤n·š‘éÜ¡×¢ëiºÛ©Š{h–)Ş²‡åzx-†{¦×^r‡^uç(uè§¦ëa…éiv+)•¬­†+&zËè¢›­Šznµø¥y×Ÿjém~ŠìµØ§¢‹­¦ëhºÚnµø¥y×Ÿjém~ŠìµÚ.
+{
+  "project": {
+    "title": "AeVideoGen starter",
+    "sourceVersion": "replace-me",
+    "duration": 30,
+    "fps": 30,
+    "width": 1280,
+    "height": 720
+  },
+  "render": {
+    "pixelScale": 2,
+    "outputWidth": 2560,
+    "outputHeight": 1440,
+    "codec": "h264",
+    "audioCodec": "aac"
+  },
+  "constraints": {
+    "noHyperFrames": true,
+    "approvalRequiredBeforeFinalRender": true,
+    "maxStaticSeconds": 0.65,
+    "minSubjectHoldSeconds": 1.2,
+    "forbidAccidentalWrap": true,
+    "minImportantFontPxAtOutput": 36
+  },
+  "creative": {
+    "textShare": "balanced",
+    "notes": "Replace with the user's approved direction"
+  },
+  "audio": {
+    "path": "assets/music-cut.mp3",
+    "sourceOffset": 0,
+    "climaxAt": 24
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0,
+      "end": 7.2,
+      "kind": "text",
+      "purpose": "Introduce the story",
+      "subject": "æŠŠä»·å€¼æ”¾åˆ°é«˜æ½®",
+      "text": "æŠŠç”¨æˆ·è¦è®°ä½çš„ä»·å€¼æ”¾åˆ°çœŸæ­£çš„é«˜æ½®",
+      "linePolicy": { "mode": "exact-lines", "lines": ["æŠŠç”¨æˆ·è¦è®°ä½çš„ä»·å€¼", "æ”¾åˆ°çœŸæ­£çš„é«˜æ½®"] },
+      "focus": { "x": 0.5, "y": 0.5, "scale": 1 },
+      "motion": { "continuous": true, "cameraMoves": 1 },
+      "readabilitySeconds": 4.5,
+      "audit": {
+        "checkpoints": [2.5],
+        "requiredVisible": ["#heroTitle"],
+        "exactLines": {"#heroTitle": 2},
+        "importantText": ["#heroTitle"],
+        "noOverflow": []
+      }
+    },
+    {
+      "id": "product-context",
+      "start": 6.2,
+      "end": 11.5,
+      "kind": "ui",
+      "purpose": "Establish the source-backed product surface",
+      "subject": "product-shell",
+      "visualGroup": "#productShell",
+      "focus": { "x": 0.5, "y": 0.5, "scale": 1 },
+      "motion": { "continuous": true, "cameraMoves": 1 },
+      "audit": {
+        "checkpoints": [10],
+        "requiredVisible": ["#productShell", "#demoButton"],
+        "visualGroup": "#productShell",
+        "noOverflow": ["#productShell"]
+      }
+    },
+    {
+      "id": "product-action",
+      "start": 11.5,
+      "end": 17.8,
+      "kind": "interaction",
+      "purpose": "Focus and perform the real action",
+      "subject": "product-shell-action",
+      "visualGroup": "#productShell",
+      "focus": { "x": 0.425, "y": 0.67, "scale": 1.82 },
+      "motion": { "continuous": true, "cameraMoves": 1 },
+      "audit": {
+        "checkpoints": [14],
+        "requiredVisible": ["#productShell", "#demoButton"],
+        "visualGroup": "#productShell",
+        "noOverflow": ["#productShell"]
+      }
+    },
+    {
+      "id": "product-release",
+      "start": 17.8,
+      "end": 22.4,
+      "kind": "ui",
+      "purpose": "Release from the action into the value statement",
+      "subject": "product-shell-result",
+      "visualGroup": "#productShell",
+      "focus": { "x": 0.48, "y": 0.54, "scale": 1.2 },
+      "motion": { "continuous": true, "cameraMoves": 1 },
+      "audit": {
+        "checkpoints": [20.5],
+        "requiredVisible": ["#productShell"],
+        "visualGroup": "#productShell"
+      }
+    },
+    {
+      "id": "primary-value",
+      "start": 21.4,
+      "end": 30,
+      "kind": "text",
+      "purpose": "State the main promise",
+      "subject": "æ˜¯æœ‰é€»è¾‘çš„äº§å“ç”µå½±",
+      "priority": "primary",
+      "text": "ä¸æ˜¯æˆªå›¾ç¼©æ”¾ï¼Œæ˜¯æœ‰é€»è¾‘çš„äº§å“ç”µå½±",
+      "linePolicy": { "mode": "single-line", "maxLines": 1 },
+      "focus": { "x": 0.5, "y": 0.5, "scale": 1 },
+      "motion": { "continuous": true, "cameraMoves": 1 },
+      "readabilitySeconds": 5.5,
+      "audit": {
+        "checkpoints": [25],
+        "requiredVisible": ["#valueTitle"],
+        "singleLine": ["#valueTitle"],
+        "importantText": ["#valueTitle"],
+        "noOverflow": []
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "time": 14,
+      "action": "click",
+      "target": "#demoButton",
+      "coordinateSource": "dom-rect",
+      "x": 0.425,
+      "y": 0.841,
+      "focusScene": "product-action"
+    }
+  ],
+  "approval": {
+    "status": "pending",
+    "approvedVersion": null,
+    "exportRequested": false,
+    "exportSpecConfirmed": false,
+    "exportSpec": null
+  }
+}
